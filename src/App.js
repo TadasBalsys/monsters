@@ -11,7 +11,7 @@ class App extends Component {
       searchField: ''
     }
   }
-  
+
   componentDidMount() {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then(response => response.json())
@@ -32,7 +32,8 @@ class App extends Component {
     })
 
     return !monsters.length ? <h2>Loading...</h2> : (
-      <div className="App" >
+      <div className="app" >
+      <h1 className='app-header'>Monsters</h1>
         <SearchBox placeholderString={"Search Monsters"} handleChange={this.handleChange} />
         <CardList monsters={filtederMonsters} />
       </div>
